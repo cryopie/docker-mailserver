@@ -13,14 +13,14 @@
         <meta name="author" content="docker-mailserver (Github Organization)">
       
       
-        <link rel="canonical" href="https://docker-mailserver.github.io/docker-mailserver/edge/config/user-management/aliases/">
+        <link rel="canonical" href="https://docker-mailserver.github.io/docker-mailserver/edge/config/security/mail_crypt/">
       
       <link rel="icon" href="../../../assets/logo/favicon-32x32.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
-        <title>User Management | Aliases - Docker Mailserver</title>
+        <title>Security | mail_crypt (email/storage encryption) - Docker Mailserver</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#configuring-regexp-aliases" class="md-skip">
+        <a href="#single-encryption-key-global-method" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              User Management | Aliases
+              Security | mail_crypt (email/storage encryption)
             
           </span>
         </div>
@@ -432,14 +432,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" data-md-state="indeterminate" type="checkbox" id="__nav_3_3" checked>
       
       <label class="md-nav__link" for="__nav_3_3">
         User Management
@@ -457,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../accounts/" class="md-nav__link">
+      <a href="../../user-management/accounts/" class="md-nav__link">
         Accounts
       </a>
     </li>
@@ -467,54 +465,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Aliases
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../user-management/aliases/" class="md-nav__link">
         Aliases
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configuring-regexp-aliases" class="md-nav__link">
-    Configuring RegExp Aliases
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#address-tags-extension-delimiters-an-alternative-to-aliases" class="md-nav__link">
-    Address Tags (Extension Delimiters) an Alternative to Aliases
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -603,12 +558,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_3_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" checked>
       
       <label class="md-nav__link" for="__nav_3_5">
         Security
@@ -626,7 +583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/understanding-the-ports/" class="md-nav__link">
+      <a href="../understanding-the-ports/" class="md-nav__link">
         Understanding the Ports
       </a>
     </li>
@@ -638,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/ssl/" class="md-nav__link">
+      <a href="../ssl/" class="md-nav__link">
         SSL/TLS
       </a>
     </li>
@@ -650,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/fail2ban/" class="md-nav__link">
+      <a href="../fail2ban/" class="md-nav__link">
         Fail2Ban
       </a>
     </li>
@@ -660,11 +617,47 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../security/mail_crypt/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Mail Encryption
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Mail Encryption
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#single-encryption-key-global-method" class="md-nav__link">
+    Single Encryption Key / Global Method
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1275,15 +1268,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuring-regexp-aliases" class="md-nav__link">
-    Configuring RegExp Aliases
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#address-tags-extension-delimiters-an-alternative-to-aliases" class="md-nav__link">
-    Address Tags (Extension Delimiters) an Alternative to Aliases
+  <a href="#single-encryption-key-global-method" class="md-nav__link">
+    Single Encryption Key / Global Method
   </a>
   
 </li>
@@ -1300,38 +1286,71 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/docker-mailserver/docker-mailserver/edit/master/docs/content/config/user-management/aliases.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/docker-mailserver/docker-mailserver/edit/master/docs/content/config/security/mail_crypt.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Aliases</h1>
+                  <h1>Mail Encryption</h1>
                 
-                <p>Please read the <a href="http://www.postfix.org/VIRTUAL_README.html#virtual_alias">Postfix documentation on virtual aliases</a> first.</p>
-<p>You can use <a href="../../setup.sh/"><code>setup.sh</code></a> instead of creating and editing files manually. Aliases are managed in <code>/tmp/docker-mailserver/postfix-virtual.cf</code>. An alias is a <em>full</em> email address that will either be:</p>
-<ul>
-<li>delivered to an existing account registered in <code>/tmp/docker-mailserver/postfix-accounts.cf</code></li>
-<li>redirected to one or more other email addresses</li>
-</ul>
-<p>Alias and target are space separated. An example on a server with domain.tld as its domain:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Alias delivered to an existing account</span>
-<span class="na">alias1@domain.tld user1@domain.tld</span>
-
-<span class="c1"># Alias forwarded to an external email address</span>
-<span class="na">alias2@domain.tld external@gmail.com</span>
-</code></pre></div>
-<h2 id="configuring-regexp-aliases"><a class="toclink" href="#configuring-regexp-aliases">Configuring RegExp Aliases</a></h2>
-<p>Additional regexp aliases can be configured by placing them into <code>config/postfix-regexp.cf</code>. The regexp aliases get evaluated after the virtual aliases (<code>/tmp/docker-mailserver/postfix-virtual.cf</code>). For example, the following <code>config/postfix-regexp.cf</code> causes all email to "test" users to be delivered to <code>qa@example.com</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="na">/^test[0-9][0-9]*@example.com/ qa@example.com</span>
-</code></pre></div>
-<h2 id="address-tags-extension-delimiters-an-alternative-to-aliases"><a class="toclink" href="#address-tags-extension-delimiters-an-alternative-to-aliases">Address Tags (Extension Delimiters) an Alternative to Aliases</a></h2>
-<p>Postfix supports so-called address tags, in the form of plus (+) tags - i.e. <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#100;&#100;&#114;&#101;&#115;&#115;&#43;&#116;&#97;&#103;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#97;&#100;&#100;&#114;&#101;&#115;&#115;&#43;&#116;&#97;&#103;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a> will end up at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#100;&#100;&#114;&#101;&#115;&#115;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#97;&#100;&#100;&#114;&#101;&#115;&#115;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>. This is configured by default and the (configurable !) separator is set to <code>+</code>. For more info, see <a href="https://www.stevejenkins.com/blog/2011/03/how-to-use-address-tagging-usertagexample-com-with-postfix/">How to use Address Tagging (<code>user+tag@example.com</code>) with Postfix</a> and the <a href="http://www.postfix.org/postconf.5.html#recipient_delimiter">official documentation</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you do decide to change the configurable separator, you must add the same line to <em>both</em> <code>config/postfix-main.cf</code> and <code>config/dovecot.cf</code>, because Dovecot is acting as the delivery agent. For example, to switch to <code>-</code>, add:</p>
+                <div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The Mail crypt plugin is used to secure email messages stored in a Dovecot system. Messages are encrypted before written to storage and decrypted after reading. Both operations are transparent to the user.</p>
+<p>In case of unauthorized access to the storage backend, the messages will, without access to the decryption keys, be unreadable to the offending party.</p>
+<p>There can be a single encryption key for the whole system or each user can have a key of their own. The used cryptographical methods are widely used standards and keys are stored in portable formats, when possible.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="na">recipient_delimiter</span> <span class="o">=</span> <span class="s">-</span>
+<p>Official Dovecot documentation: <a href="https://doc.dovecot.org/configuration_manual/mail_crypt_plugin/">https://doc.dovecot.org/configuration_manual/mail_crypt_plugin/</a></p>
+<hr />
+<h2 id="single-encryption-key-global-method"><a class="toclink" href="#single-encryption-key-global-method">Single Encryption Key / Global Method</a></h2>
+<ol>
+<li>
+<p>Create <code>10-custom.conf</code> and populate it with the following:</p>
+<div class="highlight"><pre><span></span><code># Enables mail_crypt for all services (imap, pop3, etc)
+mail_plugins = $mail_plugins mail_crypt
+plugin {
+  mail_crypt_global_private_key = &lt;/certs/ecprivkey.pem
+  mail_crypt_global_public_key = &lt;/certs/ecpubkey.pem
+  mail_crypt_save_version = 2
+}
 </code></pre></div>
+</li>
+<li>
+<p>Shutdown your mailserver (<code>docker-compose down</code>)</p>
+</li>
+<li>
+<p>You then need to <a href="https://doc.dovecot.org/configuration_manual/mail_crypt_plugin/#ec-key">generate your global EC key</a>. We named them <code>/certs/ecprivkey.pem</code> and <code>/certs/ecpubkey.pem</code> in step #1.</p>
+</li>
+<li>
+<p>The EC key needs to be available in the container. I prefer to mount a /certs directory into the container: 
+    <div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+  <span class="nt">mailserver</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">docker.io/mailserver/docker-mailserver:latest</span>
+    <span class="nt">volumes</span><span class="p">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">. . .</span>
+      <span class="l l-Scalar l-Scalar-Plain">- ./certs/:/certs</span>
+    <span class="l l-Scalar l-Scalar-Plain">. . .</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>While you're editing the <code>docker-compose.yml</code>, add the configuration file:
+    <div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+  <span class="nt">mailserver</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">docker.io/mailserver/docker-mailserver:latest</span>
+    <span class="nt">volumes</span><span class="p">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">. . .</span>
+      <span class="l l-Scalar l-Scalar-Plain">- ./config/dovecot/10-custom.conf:/etc/dovecot/conf.d/10-custom.conf</span>
+      <span class="l l-Scalar l-Scalar-Plain">- ./certs/:/certs</span>
+    <span class="l l-Scalar l-Scalar-Plain">. . .</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Start the container, monitor the logs for any errors, send yourself a message, and then confirm the file on disk is encrypted:
+    <div class="highlight"><pre><span></span><code>[root@ip-XXXXXXXXXX ~]# cat -A /mnt/efs-us-west-2/maildata/awesomesite.com/me/cur/1623989305.M6v�z�@�� m}��,��9����B*�247.us-west-2.compute.inE��\Ck*�@7795,W=7947:2,
+T�9�8t�6�� t���e�W��S   `�H��C�ڤ �yeY��XZ��^�d�/��+�A
+</code></pre></div></p>
+</li>
+</ol>
+<p>This should be the minimum required for encryption of the mail while in storage.</p>
                 
                   
                 
@@ -1357,7 +1376,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../accounts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Accounts" rel="prev">
+        <a href="../fail2ban/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fail2Ban" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1366,20 +1385,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Accounts
+              Fail2Ban
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../best-practices/dkim/" class="md-footer__link md-footer__link--next" aria-label="Next: DKIM" rel="next">
+        <a href="../../troubleshooting/debugging/" class="md-footer__link md-footer__link--next" aria-label="Next: Debugging" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              DKIM
+              Debugging
             </div>
           </div>
           <div class="md-footer__button md-icon">
