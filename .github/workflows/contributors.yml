@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Auto-add contributors
-      uses: BobAnkh/add-contributors@v0.2.1
+      uses: BobAnkh/add-contributors@v0.2.2
       with:
         REPO_NAME: 'docker-mailserver/docker-mailserver'
         CONTRIBUTOR: '## Contributors'
