@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docker-mailserver.github.io/docker-mailserver/edge/faq/">
       
       
-        <link rel="prev" href="../examples/use-cases/ios-mail-push-support/">
+        <link rel="prev" href="../examples/use-cases/auth-lua/">
       
       
         <link rel="next" href="../contributing/general/">
@@ -1610,6 +1610,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/use-cases/auth-lua/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lua Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2840,8 +2860,9 @@ chmod<span class="w"> </span><span class="m">0644</span><span class="w"> </span>
 <span class="nb">if</span> <span class="nb">header</span> <span class="nt">:contains</span> <span class="s">&quot;X-Spam-Flag&quot;</span> <span class="s">&quot;YES&quot;</span> <span class="p">{</span>
   <span class="nb">fileinto</span> <span class="s">&quot;Junk&quot;</span><span class="p">;</span>
 <span class="p">}</span> <span class="nb">elsif</span> <span class="nb">allof</span> <span class="p">(</span>
-   <span class="nb">not</span> <span class="nb">header</span> <span class="nt">:matches</span> <span class="s">&quot;x-spam-score&quot;</span> <span class="s">&quot;-*&quot;</span><span class="p">,</span>
-   <span class="nb">header</span> <span class="nt">:value</span> <span class="s">&quot;ge&quot;</span> <span class="nt">:comparator</span> <span class="s">&quot;i;ascii-numeric&quot;</span> <span class="s">&quot;x-spam-score&quot;</span> <span class="s">&quot;3.75&quot;</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="nb">not</span> <span class="nb">header</span> <span class="nt">:matches</span> <span class="s">&quot;x-spam-score&quot;</span> <span class="s">&quot;-*&quot;</span><span class="p">,</span>
+  <span class="nb">header</span> <span class="nt">:value</span> <span class="s">&quot;ge&quot;</span> <span class="nt">:comparator</span> <span class="s">&quot;i;ascii-numeric&quot;</span> <span class="s">&quot;x-spam-score&quot;</span> <span class="s">&quot;3.75&quot;</span>
+<span class="p">)</span> <span class="p">{</span>
   <span class="nb">fileinto</span> <span class="s">&quot;Junk&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
